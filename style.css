@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&family=Silkscreen:wght@400;700&display=swap');*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    display: flex;
+    align-items: center;
+    /* background-color: aqua; */
+    width: 70vw;
+    height: 80vh;
+    
+    flex-direction: column;
+}
+
+
+.showTime{
+    font-family: "Electrolize", sans-serif;
+    /* background-color: antiquewhite; */
+    height: 50vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 8vw;
+}
+.setTime{
+    height: 10vh;
+    width: 70vw;
+    /* background-color: aquamarine; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+input{
+    text-align: center;
+    margin: 5px;
+    padding: 2px;
+    font-size: 1.5rem;
+    border: 0px;
+    border-bottom: 2px solid;
+    width: 10%;
+    background-color: transparent;
+}
+.status{
+    font-family: "Electrolize", sans-serif;
+    height: 20vh;
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2vw;
+}
+
+.blink{
+    animation: blink 3s infinite;
+}
+
+@keyframes blink {
+    form{opacity: 1;}
+    50%{opacity: 0;}
+    to{opacity: 1;}
+}
