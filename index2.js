@@ -88,7 +88,6 @@ function changestep3(){
     step3Down = !step3Down;
 }
 
-// upDateremainTime(time.hour,time.min,time.sec);
 
 
 //------------------------------------working------------------------------------
