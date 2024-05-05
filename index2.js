@@ -51,7 +51,7 @@ function renderTime(h,m,s){
     showTime.sec.innerHTML = s;
 };
 
-//countdown
+//countdown (settimeout)
 function countdown(second){
     remainTime = second;
     if(!step2Counting) return
@@ -74,6 +74,9 @@ function countdown(second){
     },1000)
    
 };
+
+
+
 //changesetUpStatus
 function changeset1(){
     if(remainTime==0) return
@@ -129,3 +132,4 @@ document.addEventListener('keydown',event=>{
 
 
 //------------------------------------testing------------------------------------
+ 

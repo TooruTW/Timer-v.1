@@ -20,6 +20,10 @@ body{
     flex-direction: column;
 }
 
+.hide{
+    display: none;
+}
+
 
 .showTime{
     font-family: "Electrolize", sans-serif;
