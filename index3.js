@@ -36,7 +36,8 @@ function countdown(remainTime){
             if(remainTime < 0.01) {
                 changestep3();
                 document.querySelector('#status').innerHTML = "Time's Up. Refresh to Restart"
-                document.body.style.backgroundColor = "gray";
+                document.querySelector(".container").style.color = "LightGray"
+                document.body.style.backgroundColor = "black";
                 return
             }
             remainTime -= 0.01;
@@ -69,7 +70,8 @@ function handleTime(hr,min,sec){
 //獲取訊號
 //設定時間
 document.addEventListener('keydown',event=>{
-    if(event.key.startsWith("Enter")){
+    if(event.key.startsWith("Enter") && step1setTime === true){return}
+    if(event.key.startsWith("Enter") && step2Counting === false){
         let inputhr
         let inputmin
         let inputsec
@@ -89,7 +91,11 @@ document.addEventListener('keydown',event=>{
         changeStep1();
         countdown(remainTime)
 
+
+
         document.querySelector('#status').innerHTML = "Press Space To Start"
+        document.body.style.backgroundColor = "LightGray";
+        document.querySelector("form").style.display = "none";
     };
 })
 
@@ -99,7 +105,7 @@ document.addEventListener('keydown',event=>{
         changestep2();
         if(step2Counting === true){
         document.querySelector('#status').innerHTML = "Press Space To Pause"
-        document.body.style.backgroundColor = "white";
+        document.body.style.backgroundColor = "LightGray";
 
         } else if (step2Counting === false){
         document.querySelector('#status').innerHTML = "Press Space To Start"

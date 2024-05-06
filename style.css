@@ -9,6 +9,7 @@ body{
     justify-content: center;
     align-items: center;
     height: 100vh;
+    background-color: White;
 }
 .container{
     display: flex;
@@ -20,9 +21,6 @@ body{
     flex-direction: column;
 }
 
-.hide{
-    display: none;
-}
 
 
 .showTime{
