@@ -62,6 +62,7 @@ function changestep3(){
 
 //轉換單位
 function handleTime(hr,min,sec){
+    remainTime = 0 ;
     remainTime = hr * 3600 + min * 60 + sec * 1
 }
 
