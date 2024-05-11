@@ -32,12 +32,18 @@ function countdown(remainTime){
         if(step1setTime === true && step2Counting === true){
             if(remainTime < 6){
                 document.body.style.backgroundColor = "red";
+                document.querySelector("#avtive").style.backgroundColor = "red";
+
             }
             if(remainTime < 0.01) {
                 changestep3();
                 document.querySelector('#status').innerHTML = "Time's Up. Refresh to Restart"
                 document.querySelector(".container").style.color = "LightGray"
                 document.body.style.backgroundColor = "black";
+                document.querySelector("#avtive").style.backgroundColor = "black";
+                document.querySelector("#avtive").innerHTML = "Time's Up";
+
+
                 return
             }
             remainTime -= 0.01;
@@ -99,6 +105,39 @@ document.addEventListener('keydown',event=>{
     };
 })
 
+document.querySelector('#settime').addEventListener('click',event=>{
+    if(step1setTime === true){return}
+    if(step2Counting === false){
+        let inputhr
+        let inputmin
+        let inputsec
+
+        if(document.querySelector("#thr").value)
+        {inputhr = document.querySelector("#thr").value;}
+        else{inputhr = 0;}
+        if(document.querySelector("#tmin").value)
+        {inputmin = document.querySelector("#tmin").value;}
+        else{inputmin = 0;}
+        if(document.querySelector("#tsec").value)
+        {inputsec = document.querySelector("#tsec").value;}
+        else{inputsec = 0;}
+
+        handleTime(inputhr,inputmin,inputsec);
+        renderTime(remainTime);
+        changeStep1();
+        countdown(remainTime)
+
+
+
+        document.querySelector('#status').innerHTML = "Press Space To Start"
+        document.body.style.backgroundColor = "LightGray";
+        document.querySelector("form").style.display = "none";
+        document.querySelector("#settime").style.display = "none";
+        document.querySelector("#avtive").classList.remove("hide");
+
+    };
+})
+
 //執行&暫停倒數
 document.addEventListener('keydown',event=>{
     if(event.key.startsWith(" ") && step1setTime === true){
@@ -113,4 +152,23 @@ document.addEventListener('keydown',event=>{
         }
     }
 })
+
+document.querySelector('#avtive').addEventListener('click',event=>{
+    if(step1setTime === true){
+        changestep2();
+        if(step2Counting === true){
+        document.querySelector('#avtive').innerHTML = "Pause"
+        document.body.style.backgroundColor = "LightGray";
+        document.querySelector("#avtive").style.backgroundColor = "rgb(143, 140, 140)";
+
+
+        } else if (step2Counting === false){
+        document.querySelector('#avtive').innerHTML = "Start"
+        document.body.style.backgroundColor = "Aqua";
+        document.querySelector("#avtive").style.backgroundColor = "Aqua";
+        }
+    }
+})
+
+
 
